@@ -4,6 +4,7 @@ This project contains two challenges - a "Ticket Breakdown" challenge and a "Ref
 
 ## [Refactoring](Refactoring.md)
 
+- No need to set 'candidate = TRIVIAL_PARTITION_KEY' manually inside else part, we can just move it to return statement and return it conditionally at the end.
 - Changed the variable TRIVIAL_PARTITION_KEY to meaningful name.
 - Function input variable name changed to partition, because we are passing the useful partition(not any random event) and then doing the further operation on the key.
 - Candidate variable name was a confusing one and so I have replaced it with "partitionKeyOutput". W=
