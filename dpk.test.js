@@ -14,7 +14,7 @@ describe("deterministicPartitionKey", () => {
     expect(result).toBe("test");
   });
 
-  it("Returns test string output for passed number partition key", () => {
+  it("Returns converted string output for passed number partition key", () => {
     const partition = {
       partitionKey: 123,
     };
