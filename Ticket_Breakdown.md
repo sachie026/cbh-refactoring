@@ -16,15 +16,23 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 ## Your Breakdown Here
 
-Tickets:
+High level details:
 
 - First of all, we need to fetch all the facilities `getFacilities` on our platform and then we need to fetch all the shifts by each facilities i.e. `getShiftsByFacility`. The metadata should have a data fields like `Agent id`, `Agent name`, `Facility name`, `Facility email`, `Shift timing`, `Total hours`, `Location`, `Shift date` etc.
 
   1. Acceptance criteria: On the facilities list view, `getFacilities` function should be called and it should fetch/render all the facilities. If there are no facilities, then show th valid informative message in the list view.
-  2. Estimation: Assuming backend API is ready and UI is simple, 3-4 hours to finish the list view, informative message and a few test cases.
+  2. Once all the facilities are fetched you need to call `getShiftsByFacility` function. Use something like Promises.all while fetching all facilities and shifts.
+  3. Estimation: Assuming backend API is ready and UI is simple, 6 hours to finish the list view, informative message and a few test cases.
 
 - We can show the **Generate report** button on the facilities table. Based on the `Agent id` that we saw in `getShiftsByFacility` function, we will sum up all the shifts for all the agents and create a valid pdf file. Once generated we will send the pdf automatically to the `Facility email`.
 
   1. Acceptance criteria: On the facilities list view, need to add a 'Generate report' button on the list view. When clicked `generateReport` function is called and PDF is generated in the valid form and sent to the facility automatically when finished(Show success banner). If there is any error then show the error banner.
-  2. Estimation: Assuming backend API is ready and UI is simple, 6-8 hours to finish the (adding button, banner showing stuff, pdf generation logic/library, test cases).
-  3. Need to check if there is an easy to use library available that can be used for pdf generation and use it.
+  2. Estimation: Assuming backend API is ready and UI is simple, 8 hours to finish the (adding button, banner showing stuff, pdf generation logic/library, test cases).
+  3. Need to check if there is an easy to use library available that can be used for pdf generation and use it. Also need to buils DTO for PDF.
+
+Tickets:
+
+- Fetch and render `getFacilities` list view [3h]
+- Fetch and render `getShiftsByFacility`. [3h]
+- Create a business logic function for the `generateReport` function and make it work/test. [4h]
+- Show `Generate report` button to the facilities table and integrate it with `generateReport`. [4h]
