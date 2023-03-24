@@ -22,6 +22,14 @@ describe("deterministicPartitionKey", () => {
     expect(result).toBe("123");
   });
 
+  it("Returns sha string output for the input without partition key", () => {
+    const partition = {};
+    const result = deterministicPartitionKey(partition);
+    expect(result).toBe(
+      "c1802e6b9670927ebfddb7f67b3824642237361f07db35526c42c555ffd2dbe74156c366e1550ef8c0508a6cc796409a7194a59bba4d300a6182b483d315a862"
+    );
+  });
+
   it("Returns test sha output for passed string partition key with more than 256 chars", () => {
     const partition = {
       partitionKey: new Array(256 + 10).join("a"),
